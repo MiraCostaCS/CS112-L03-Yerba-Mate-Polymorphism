@@ -1,4 +1,3 @@
-package lab03;
 public class CaffeinatedBeverage
 {
     /***INSTANCE VARIABLES***/
