@@ -1,4 +1,3 @@
-package lab03;
 public class Tea extends CaffeinatedBeverage {
 
     /**INSTANCE VARIABLES**/
