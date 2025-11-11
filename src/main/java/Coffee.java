@@ -1,4 +1,3 @@
-package lab03;
 public class Coffee extends CaffeinatedBeverage {
 
     // CONSTANT VARIABLES
