@@ -6,18 +6,69 @@ In this assignment, you will be creating an application for inventory of caffein
 
 You will be creating 3 classes to represent this data: `CaffeinatedBeverage.java`, `Tea.java` and `YerbaMate.java`.  For our purposes, `CaffeinatedBeverage` will be the base (parent) class, `Tea` and `YerbaMate` will be the derived (child) classes. The UML diagram below visualizes this:
 
-![uml class diagram showing inheritance from CaffeinatedBeverage, Tea, and YerbaMate](https://i.imgur.com/2EO4Unl.png) 
+```mermaid
+classDiagram
+    class CaffeinatedBeverage {
+        -name : String
+        -ounces : int
+        -price : double
 
+        +CaffeinatedBeverage()
+        +CaffeinatedBeverage(name : String, ounces : int, price : double)
+        +CaffeinatedBeverage(other : CaffeinatedBeverage)
+        +getName() String
+        +setName(name : String) boolean
+        +getOunces() int
+        +setOunces(ounces : int) boolean
+        +getPrice() double
+        +setPrice(price : double) boolean
+		+setAll(name : String, ounces : int, price : double) boolean
+		+sip(ounces : int) boolean
+        +equals(other : Object) boolean
+        +toString() String
+    }
+
+    class Tea {
+        -brewTemp : int
+
+        +Tea()
+        +Tea(name : String, ounces : int, price : double, brewTemp : int)
+        +Tea(other : Tea)
+
+        +getBrewTemp() int
+        +setBrewTemp(brewTemp : int) boolean
+		+setAll(name : String, ounces : int, price : double, brewTemp : int)
+        +equals(other : Object) boolean
+        +toString() String
+    }
+
+    class YerbaMate {
+        -numPasses : int
+
+        +YerbaMate()
+        +YerbaMate(name : String, ounces : int, price : double, brewTemp : int, numPasses : int)
+        +YerbaMate(other : YerbaMate)
+
+        +getNumPasses() int
+		+passMate() void
+		+refill(ounces : int) void
+        +equals(other : Object) boolean
+        +toString() String
+    }
+
+    CaffeinatedBeverage <|-- Tea
+    Tea <|-- YerbaMate
+```
 Each are described below, along with the steps to complete this lab:
 
 ---
 
 **`CaffeinatedBeverage`:** This is the ancestor class of the other two.Here are the specifications:
 
-1. Create instance variables for **`name`** (`String`), **`ounces` **(`int`) and **`price`** (`double`).
+1. Create instance variables for **`name`** (`String`), **`ounces`** (`int`) and **`price`** (`double`).
 2. Create all required methods for model classes (constructors, setters, getters, toString, equals)
-3. Error check that `**ounces**` is valid (>= 0), as well as `**price**` (>= 0)
-4. Create the `sip()` method that, when given a sip amount, subtracts it from the `**ounces**` instance variable. If the sip is greater than the number of ounces, it should leave it at 0 (not go into negatives!) and return `false` meaning there is no more liquid left (return `true` if there is still more left).
+3. Error check that **`ounces`** is valid (>= 0), as well as **`price`** (>= 0)
+4. Create the `sip()` method that, when given a sip amount, subtracts it from the **`ounces`** instance variable. If the sip is greater than the number of ounces, it should leave it at 0 (not go into negatives!) and return `false` meaning there is no more liquid left (return `true` if there is still more left).
 
 ---
 
@@ -62,14 +113,13 @@ For example:
 
 # **Hacker Challenge**
 
-  ![coffee cup](https://i.imgur.com/IJqtvu7.png) 
-
+![coffee cup](https://i.imgur.com/IJqtvu7.png) 
 
 Create another subclass to `CaffeinatedBeverage`, fully documented, and add it as a menu option to the driver (with the appropriate inputs). Think about who the parent should be, as it depends on the kind of beverage you are representing. It should have at least one other instance variable, with appropriate changes and new methods. For example, `Coffee` could have `brewType` (i.e., french press, espresso, pour over, etc.) with the additional setter/getter and appropriate constructor/`equals`/`toString`. Other ideas could be a class representing energy drinks, soda, etc.
 
 **Looking for an additional challenge?**
 
-   ![man holding mate gourd out to viewer](https://i.imgur.com/fuf22oc.jpg) 
+![man holding mate gourd out to viewer](https://i.imgur.com/fuf22oc.jpg) 
 
 Create a simulation of the mate ritual of passing the gourd around a circle of people. Start by asking how many people will be sharing the mate, and asking for each of their names. Print out each person's name when it's their turn.
 
