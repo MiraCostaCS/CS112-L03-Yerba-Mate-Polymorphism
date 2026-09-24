@@ -8,6 +8,9 @@ You will be creating 3 classes to represent this data: `CaffeinatedBeverage.java
 
 ```mermaid
 classDiagram
+    CaffeinatedBeverage <|-- Tea : extends
+    Tea <|-- YerbaMate : extends
+
     class CaffeinatedBeverage {
         -name : String
         -ounces : int
@@ -16,6 +19,7 @@ classDiagram
         +CaffeinatedBeverage()
         +CaffeinatedBeverage(name : String, ounces : int, price : double)
         +CaffeinatedBeverage(other : CaffeinatedBeverage)
+
         +getName() String
         +setName(name : String) boolean
         +getOunces() int
@@ -23,9 +27,10 @@ classDiagram
         +getPrice() double
         +setPrice(price : double) boolean
 		+setAll(name : String, ounces : int, price : double) boolean
-		+sip(ounces : int) boolean
         +equals(other : Object) boolean
         +toString() String
+
+		+sip(ounces : int) boolean
     }
 
     class Tea {
@@ -55,9 +60,6 @@ classDiagram
         +equals(other : Object) boolean
         +toString() String
     }
-
-    CaffeinatedBeverage <|-- Tea
-    Tea <|-- YerbaMate
 ```
 Each are described below, along with the steps to complete this lab:
 
