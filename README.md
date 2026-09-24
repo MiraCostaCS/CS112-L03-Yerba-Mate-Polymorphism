@@ -12,53 +12,53 @@ classDiagram
     Tea <|-- YerbaMate : extends
 
     class CaffeinatedBeverage {
-        -name : String
-        -ounces : int
-        -price : double
+        - name : String
+        - ounces : int
+        - price : double
 
-        +CaffeinatedBeverage()
-        +CaffeinatedBeverage(name : String, ounces : int, price : double)
-        +CaffeinatedBeverage(other : CaffeinatedBeverage)
+        + CaffeinatedBeverage()
+        + CaffeinatedBeverage(name : String, ounces : int, price : double)
+        + CaffeinatedBeverage(other : CaffeinatedBeverage)
 
-        +getName() String
-        +setName(name : String) boolean
-        +getOunces() int
-        +setOunces(ounces : int) boolean
-        +getPrice() double
-        +setPrice(price : double) boolean
-		+setAll(name : String, ounces : int, price : double) boolean
-        +equals(other : Object) boolean
-        +toString() String
+        + getName() String
+        + setName(name : String) boolean
+        + getOunces() int
+        + setOunces(ounces : int) boolean
+        + getPrice() double
+        + setPrice(price : double) boolean
+		+ setAll(name : String, ounces : int, price : double) boolean
+        + equals(other : Object) boolean
+        + toString() String
 
-		+sip(ounces : int) boolean
+		+ sip(ounces : int) boolean
     }
 
     class Tea {
-        -brewTemp : int
+        - brewTemp : int
 
-        +Tea()
-        +Tea(name : String, ounces : int, price : double, brewTemp : int)
-        +Tea(other : Tea)
+        + Tea()
+        + Tea(name : String, ounces : int, price : double, brewTemp : int)
+        + Tea(other : Tea)
 
-        +getBrewTemp() int
-        +setBrewTemp(brewTemp : int) boolean
-		+setAll(name : String, ounces : int, price : double, brewTemp : int)
-        +equals(other : Object) boolean
-        +toString() String
+        + getBrewTemp() int
+        + setBrewTemp(brewTemp : int) boolean
+		+ setAll(name : String, ounces : int, price : double, brewTemp : int)
+        + equals(other : Object) boolean
+        + toString() String
     }
 
     class YerbaMate {
-        -numPasses : int
+        - numPasses : int
 
-        +YerbaMate()
-        +YerbaMate(name : String, ounces : int, price : double, brewTemp : int, numPasses : int)
-        +YerbaMate(other : YerbaMate)
+        + YerbaMate()
+        + YerbaMate(name : String, ounces : int, price : double, brewTemp : int, numPasses : int)
+        + YerbaMate(other : YerbaMate)
 
-        +getNumPasses() int
-		+passMate() void
-		+refill(ounces : int) void
-        +equals(other : Object) boolean
-        +toString() String
+        + getNumPasses() int
+		+ passMate() void
+		+ refill(ounces : int) void
+        + equals(other : Object) boolean
+        + toString() String
     }
 ```
 Each are described below, along with the steps to complete this lab:
